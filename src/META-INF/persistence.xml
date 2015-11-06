@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="hn4spring">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>map.Lonely</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!-- NB: fake -->    <property name="hibernate.connection.url" value="jdbc:hsqldb:file:C:/Users/Olga Pavlova/IdeaProjects/SpringJPA87253/DB/DB"/>
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbc.JDBCDriver"/>
+            <!-- NB: fake -->    <property name="hibernate.connection.username" value="SA"/>
+            <!-- NB: fake -->    <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <!-- if does matter -->    <!--<property name="hibernate.default_catalog" value="ql_test"/>-->
+            <property name="hibernate.current_session_context_class" value="thread"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
