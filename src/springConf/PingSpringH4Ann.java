@@ -1,14 +1,14 @@
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import java.util.List;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+package springConf;
 
-public class PingSpringH4 {
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import javax.persistence.*;
+import java.util.List;
+
+public class PingSpringH4Ann {
     public static void main(String[] argv) {
-        ApplicationContext context= new ClassPathXmlApplicationContext("spring-jpa-hibernate-4.xml");
-        EntityManagerFactory factory = (EntityManagerFactory) context.getBean("factory0");
+        ApplicationContext context= new AnnotationConfigApplicationContext(SpringFactory.class);
+        EntityManagerFactory factory = (EntityManagerFactory) context.getBean("factory2");
         EntityManager manager = factory.createEntityManager();
 
         EntityTransaction transaction = manager.getTransaction();
@@ -21,3 +21,6 @@ public class PingSpringH4 {
         factory.close();
     }
 }
+
+
+
